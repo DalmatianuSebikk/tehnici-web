@@ -1,0 +1,26 @@
+.table {
+    width: 100%;
+    text-align: center;
+    margin: 1em 0;
+    min-width: 300px;
+    border-collapse: collapse;
+    border: 1px solid #000;
+    font-size: 18px;
+
+    thead {
+        background-color: #fff
+    }
+    tbody {
+        tr {
+            border: 1px solid #000;
+            @include transition-ease;
+            &:nth-child(even) {
+                background-color: #e7e7e7;
+            }
+            &:hover {
+                background-color: $albastru4;
+            }
+        }
+    } 
+    
+}

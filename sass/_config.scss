@@ -1,0 +1,30 @@
+@import 'colors';
+
+*{
+    // Reseturi
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+@mixin transition-ease {
+    transition: all 0.5s ease-in-out;
+}
+
+
+@mixin transition-menu {
+    transition: background-color 700ms linear, text-shadow 700ms;
+    // transition-property: background-color, text-shadow;
+    // transition-duration: 700ms, 700ms;
+    // transition-timing-function: linear, ease;
+    // transition-delay: 0s, 0s;
+}
+
+@function set-text-color($color) {
+    @if (lightness($color) > 40% ) {
+        @return #000;
+    }
+    @else {
+        @return #fff;
+    }
+}

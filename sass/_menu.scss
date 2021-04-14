@@ -1,0 +1,166 @@
+
+.nav {
+    position: fixed;
+    display: flex;
+    justify-content: space-between;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 60px;
+    opacity: 0.98;
+    z-index:1;
+    background-color: $albastru1;
+
+
+    .menu-btn {
+        position: absolute;
+        display:none;
+        z-index: 1;
+        right: 1rem;
+        top: 50%;
+        height: 20px;
+        width: 28px;
+        cursor:pointer;
+        @include transition-ease;
+    
+        &__burger {
+            position: absolute;
+            right: 0;
+            transform:translateY(-50%);
+            // top: 50%;
+            width: 28px;
+            height: 3px;
+            background: #fff;
+            @include transition-ease;
+    
+            &::before {
+                content: '';
+                position: absolute;
+                top: -8px;
+                width: 20px;
+                height: 3px;
+                background: #fff;
+                @include transition-ease;
+            }
+        
+            &::after {
+                content: '';
+                position: absolute;
+                width: 23px;
+                height: 3px;
+                background: #fff;
+                @include transition-ease;
+            }
+    
+            &.open {
+                transform: rotate(720deg);
+                background: transparent;
+    
+                &::before {
+                    width: 28px;
+                    transform: rotate(45deg) translate(-4px, 8px)
+                }
+                &::after {
+                    width: 28px;
+                    transform: rotate(-45deg) translate(-5px, -7px);
+                }
+            }
+        }
+    }
+
+    
+    .menu-title {
+        font-weight:600;
+        color: $alb;
+        display: flex;
+        align-items: center;
+    }
+    .menu-nav {
+        display: flex;
+        flex-flow: row wrap;
+        align-items: flex-start;
+        justify-content: center;
+        list-style-type: none;
+        .sub-menu {
+            display: none;
+            position: absolute;
+            top: 100%;
+
+            li {
+                background-color: $albastru4;
+                padding: 10px;
+                &:not(:first-child) {
+                    border-top: 1px solid #272727;
+                }
+                @include transition-ease;
+
+                &:hover {
+                    background-color: $albastru3;
+                }
+            }
+
+            animation-name: afisare_meniu;
+            animation-duration: 200ms;
+            animation-iteration-count: 1;
+            animation-timing-function: linear;
+            animation-fill-mode: forwards;
+
+            @keyframes afisare_meniu {
+                0% {
+                    transform-origin: top;
+                    transform: scaleY(0);
+                }
+                100% {
+                    transform-origin: top;
+                    transform: scaleY(1);
+                }
+            }
+            // &:hover {
+            //     display: block;
+            //     animation-name: afisare_meniu;
+            //     animation-duration:700ms;
+            //     animation-iteration-count: 1;
+            //     animation-timing-function: linear;
+            //     animation-fill-mode: forwards;
+            // }
+        }
+        &__item {
+            position: relative;
+            height: 100%;
+            margin-left: 15px;
+            margin-right: 15px;
+            
+            ul {
+                list-style-type: none;
+            }
+            a {
+                text-shadow: 0px -2.3rem rgba(255,255,255, 0);
+                transition: text-shadow 700ms;
+                @include transition-ease; 
+                color: #fff;
+            }
+
+            &:hover {
+                color:$verde1;
+                
+                a{
+                    text-shadow: 0px 0px $verde1;
+                }
+                .sub-menu {
+                    display: block;   
+                }
+            }
+        }
+        &__link {
+            height: 100%;
+            display: flex;
+            align-items: center;
+        }
+        
+    }
+
+
+    
+}

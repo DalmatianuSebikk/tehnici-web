@@ -1,0 +1,33 @@
+.sectiunea1 {
+    margin-top: 60px;
+    height: 70vh;
+
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+
+    background:
+    linear-gradient(
+        to right,
+        rgba($gri, 0.7),
+        rgba($gri, 0.7)
+    ),
+    url("https://wallpaperaccess.com/full/911470.jpg");
+
+    h1,h2 {
+        font-weight: 400;
+        color:#fff;
+    }
+
+    &__name {
+        font-size: 5rem;
+        color: $verde2;
+        padding-bottom: 1rem;
+        margin-top: 2px;
+    }
+    &__description {
+        font-size: 3rem;
+    }
+}
