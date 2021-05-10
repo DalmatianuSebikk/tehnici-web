@@ -1,0 +1,27 @@
+{
+  "name": "tehnici-web-proiect",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "start": "node app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DalmatianuSebikk/tehnici-web.git"
+  },
+  "author": "Sebastian Ionel",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DalmatianuSebikk/tehnici-web/issues"
+  },
+  "homepage": "https://github.com/DalmatianuSebikk/tehnici-web#readme",
+  "dependencies": {
+    "ejs": "^3.1.6",
+    "ejs-lint": "^1.2.0",
+    "ejs-mate": "^3.0.0",
+    "express": "^4.17.1",
+    "node-sass": "^6.0.0"
+  }
+}

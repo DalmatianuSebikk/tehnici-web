@@ -3,8 +3,6 @@
         flex-direction: column !important;
         align-items: center !important;
 
-        
-
         & .flex_container {
             height: 100px !important;
             a {
@@ -14,7 +12,7 @@
         }
 
         #iframe {
-            padding-top: 100px !important;
+            padding-top: 0px !important;
             max-width: 300px !important;
             height: 300px !important;
            }
@@ -46,21 +44,38 @@
         font-size: 16px !important;
     }
 
-    .menu-nav:not(.is-shown) {
-        // display: none;
-        transform: translateX(100vw);
+    #toggle:checked{
+        ~.menu-nav {
+            display:flex !important;
+            // a { 
+            //     letter-spacing: 2px !important;
+            // }
+            a {
+                text-shadow: 0px 0px rgba(255,255,255, 0);
+                letter-spacing: 0px;
+                animation-name: mymove;
+                animation-duration: 700ms;
+                animation-iteration-count: 1;
+                animation-timing-function: linear;
+                animation-fill-mode: forwards;
+            }
+            @keyframes mymove {
+                100% {letter-spacing: 2px;}
+            }
+        }
     }
     .nav {
         flex-direction: column;
         justify-content: center;
     }
     .menu-nav {
+        display:none !important;
         flex-direction: column !important;
         flex-wrap: nowrap;
         position: absolute;
         align-items: center;
         top: 100%;
-        left: 50%;
+        left: 10%;
         width:80%;
         // align-items: flex-start;
         // justify-content: center;
@@ -70,15 +85,29 @@
             margin-right: 0px !important;
             width: 100%;
             text-align: center;
+
+            &:hover {
+                & .__link {
+                    a {
+                        transition: none;
+                    }
+                } 
+            }
         }
         &__link {
-            background-color: $albastru4;
+            background-color: $albastru1;
             text-align: center;
             display: flex;
             justify-content: center;
             padding-top: 5px;
             padding-bottom: 5px;
-
+            @include transition-ease;
+            &:hover {
+                background-color: $albastru3;
+                a {
+                    transition: none;
+                }
+            }
         }
 
         .sub-menu {
@@ -89,9 +118,7 @@
         @include transition-ease; 
     }
 
-    .is-shown {
-        transform: translateX(-40vw);
-    }
+    
 
 
     .sectiunea5 {

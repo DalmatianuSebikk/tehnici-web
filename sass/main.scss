@@ -1,7 +1,7 @@
 @import 'colors', 'config', 'menu', 'sectiunea1', 'container', 'table', 'responsive';
 
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Open Sans', sans-serif;
     --albastru1: #3080bd; 
     --albastru2: #5ED9F2; 
     --albastru3: #04c3b0; 
@@ -12,8 +12,7 @@ body {
 }
 
 h1, h2, h3 {
-    font-family:Arial, Helvetica, sans-serif;
-    font-weight: 400;
+    // font-family: 'Lora', serif;
 }
 a{
     color: $albastru1;
@@ -52,9 +51,9 @@ p {
         a {
             position: relative;
             padding: 20px;
-            border-left: none;
-            border-top-left-radius: 20px;
-            border-bottom-left-radius: 20px;
+            border-left: 5px solid $albastru2;
+            border-top-left-radius: 10px;
+            border-bottom-left-radius: 10px;
             
             background-color: $albastru3;
             color: #fff;
@@ -110,14 +109,44 @@ p {
 
 }
 
-hr {
-    // border: 2px solid $albastru1;
-    width:100%;
-    background: linear-gradient(to right,#000, #000);
-    background-size: 1px;
-    background-repeat: repeat-x;
-    overflow: visible;
-    background-position: -100%;
+.hr-custom {
+    padding-top: 10px;
+    // position:relative;
+    top: 0px;
+    hr {
+        // border: 2px solid $albastru1;
+        height:0px;
+        border:2px solid $albastru1;
+    }
+    // height: 5px;
+    // background-image: linear-gradient(90deg, rgba(13,0,242,1) 0%, rgba(0,0,255,1) 50%, rgba(255,255,255,1) 50%);
+    // background-repeat: repeat-x;
+    // background-size: 10px 10px;
+
+    &::after {
+        content: ''; 
+        display:block;
+        position:relative;
+        top: -0.5px;
+        content: "";
+        height: 5px;
+        width:100%;
+        background: linear-gradient(90deg, rgba(255,255,255,1) 50%, $albastru1 50%, $albastru1 100%);
+        background-repeat: repeat-x;
+        background-size: 10px 10px;
+    }
+    
+    &::before {
+        content: ''; 
+        display:block;
+        position:relative;
+        top:1px;
+        width:100%;
+        height: 5px;
+        background: linear-gradient(90deg, $albastru1 0%, $albastru1 50%, rgba(255,255,255,1) 50%);
+        background-repeat: repeat-x;
+        background-size: 10px 10px;
+    }
 }
 
 .buton_top {
@@ -213,4 +242,11 @@ hr {
     }
 }
 
+.visually-hidden {
+    position: absolute;
+    left: -100vw;
+}
 
+.overflow {
+    overflow-x: auto;
+}
