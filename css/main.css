@@ -246,6 +246,44 @@
   font-size: 3rem;
 }
 
+.sectiuneaeroare {
+  margin-top: 60px;
+  height: 70vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  text-align: center;
+  background: -webkit-gradient(linear, left top, right top, from(rgba(75, 75, 75, 0.7)), to(rgba(75, 75, 75, 0.7))), url("/404err.jpg");
+  background: linear-gradient(to right, rgba(75, 75, 75, 0.7), rgba(75, 75, 75, 0.7)), url("/404err.jpg");
+}
+
+.sectiuneaeroare h1, .sectiuneaeroare h2 {
+  font-weight: 400;
+  color: #fff;
+}
+
+.sectiuneaeroare__name {
+  font-size: 5rem;
+  color: #5AE88A;
+  padding-bottom: 1rem;
+  margin-top: 2px;
+}
+
+.sectiuneaeroare__description {
+  font-family: 'Lora', serif;
+  font-size: 3rem;
+}
+
 .container {
   padding-right: 3rem;
   padding-left: 3rem;
@@ -606,7 +644,7 @@ p {
 
 .footer {
   background-color: #3080bd;
-  height: 13rem;
+  height: 14.2rem;
   padding-top: 2rem;
   padding-bottom: 2rem;
   padding-right: 3rem;
@@ -824,4 +862,12 @@ p {
 .visually-hidden {
   position: absolute;
   left: -100vw;
+}
+
+.overflow {
+  overflow-x: auto;
+}
+
+.spatiu-gol {
+  margin-top: 10em;
 }
