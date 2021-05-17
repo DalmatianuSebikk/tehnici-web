@@ -1,0 +1,200 @@
+.galerie{
+    width:400px;
+    height:300px;
+    box-sizing: content-box;
+    position:relative;
+   overflow:hidden;
+    margin: 0;
+    padding: 0;
+    border:5px solid black;
+    margin-bottom:5rem;
+
+    figcaption{
+        position:absolute;
+        bottom:0;
+        background:rgba(255,255,255,0.7);
+        width:100%;
+        text-align:center;
+    }
+    figure{
+        position:relative;
+        width:400px;
+        height:300px;
+        margin: 0;
+        padding: 0;
+    }
+    figcaption{
+        bottom:0px;
+      }
+  }
+
+  #galerie2 {
+    .grid_3col{
+        display:grid;
+        width:800px;
+        grid-template-columns: 400px 400px 400px;
+        grid-template-rows: 300px 300px 300px;
+        grid-row-gap:0;
+        grid-column-gap:0;
+        position:absolute;
+        top:0;
+        left:0;
+        animation-name:gal2;
+        animation-direction:alternate;
+        animation-timing-function:linear;
+        animation-iteration-count:infinite;
+        animation-duration:28s;
+        	
+    }
+
+    &:hover .grid_3col {
+        animation-play-state: paused;
+    }
+
+    @keyframes gal2{
+      0%{ // poza 1
+        top:0;
+        left:0;
+        // transform:rotate(0deg);
+      }
+      11.10%{
+        top: -300px;
+        left: 0;
+        // transform:rotate(0deg);
+      }
+      11.15% {
+        top: -300px;
+        left: 0;
+        // transform:rotate(360deg);
+        // transform: rotate(0deg);
+      }
+      21.22%{
+        top: -300px;
+        left: -800px;
+        // transform:rotate(360deg);
+      }
+      22.22%{
+        top: -300px;
+        left: -800px;
+        // transform:rotate(0deg);
+      }
+      30.33%{
+        top: -300px;
+        left: -400px;
+        // transform:rotate(0deg);
+      }
+      33.33%{
+        top: -300px;
+        left: -400px;
+        // transform:rotate(360deg);
+      }
+      40.44%{
+        top: 0;
+        left: -400px;
+        // transform:rotate(360deg);
+      }
+      44.44%{
+        top: 0;
+        left: -400px;
+        // transform:rotate(0deg);
+      }
+      50.55%{
+        top: 0;
+        left: -800px;
+        // transform:rotate(0deg);
+      }
+      55.55%{
+        top: 0;
+        left: -800px;
+        // transform:rotate(360deg);
+      }
+      60.66%{
+        top: -600px;
+        left: -800px;
+        // transform:rotate(360deg);
+      }
+      66.66%{
+        top: -600px;
+        left: -800px;
+        // transform:rotate(0deg);
+      }
+      77.77% {
+        top: -600px;
+        left: 0;
+        // transform:rotate(0deg);
+      }
+      88.88%{
+        top: -600px;
+        left: -400px;
+      }
+      99.99%{
+        top: -600px;
+        left: 0;
+      }
+      100% {
+        top: 0;
+        left: 0;
+      }
+
+        // 0%{
+        //     top:0px;
+        //   	left:0;
+        //   }
+        // 15.67%{
+        //   top:-300px;
+        //   left:0;
+        // }
+        // 16.67%{ /* 100/6 */
+        //   top:-300px;
+        //   left:0;
+        // }
+        // 32.33%{
+        //   top:-300px;
+        //   left:-400px;
+        // }
+        // 33.33%{
+        //   top:-300px;
+        //   left:-400px;
+        // }
+        // 49%{
+        //   top:0px;
+        //   left:-400px;
+        // }
+        // 50%{
+        //   top:0px;
+        //   left:-400px;
+        // }
+        // 65.67%{
+        //   top:-600px;
+        //   left:-400px;
+        // }
+        // 66.67%{
+        //   top:-600px;
+        //   left:-400px;
+        // }
+        // 82.33%{
+        //   top:-600px;
+        //   left:0px;
+        // }
+        // 83.33%{
+        //   top:-600px;
+        //   left:0px;
+        // }
+        // 99%{
+        //   top:-900px;
+        //   left:0px;
+        // }
+        // 100%{
+        //   top:-900px;
+        //   left:0px;
+        // }
+    }
+    figure{
+        height:300px;
+        position:relative;
+        overflow:hidden;
+    }
+    img{
+        height:100%;
+    }
+}

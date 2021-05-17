@@ -1,4 +1,4 @@
-@import 'colors', 'config', 'menu', 'sectiunea1', 'container', 'table', 'responsive';
+@import 'colors', 'config', 'menu', 'sectiunea1', 'container', 'table', 'responsive', 'galerieStatica', 'galerieAnimata', 'print';
 
 body {
     font-family: 'Open Sans', sans-serif;
@@ -24,7 +24,11 @@ p {
     font-size: 16px;
     color: $gri;
 }
-
+.watermark {
+    position: fixed;
+    font-size: 40px;
+    visibility: hidden;
+}
 .coloane {
     display: flex;
     flex-direction: row;
@@ -36,7 +40,7 @@ p {
         width: 60%;
         height: 388px;
         width: 630px;
-        z-index: 2;
+        z-index: 0;
     }
 
     .flex_container{ 
@@ -252,5 +256,17 @@ p {
 }
 
 .spatiu-gol {
-    margin-top: 10em;
+    margin-top: 3em;
+}
+
+.videocentru {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+video::cue {
+    background-color: rgba(255,255,255,0.3);
+    font-size: 30px;
+    color:#5ef2ba;
 }

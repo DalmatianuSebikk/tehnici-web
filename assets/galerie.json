@@ -1,0 +1,82 @@
+{
+    "cale_galerie": "galerie",
+    "imagini":[
+        {
+            "cale_fisier": "rsz_1.jpg",
+            "titlu":"Poza 1",
+            "alt":"imagine 1",
+            "text_descriere":"Descrierea imaginii 1",
+            "luni":[2, 4, 5]
+        },
+        {
+            "cale_fisier": "rsz_2.jpg",
+            "titlu":"Poza 2",
+            "alt":"imagine 2",
+            "text_descriere":"Descrierea imaginii 2",
+            "luni":[3, 2, 1]
+        },
+        {
+            "cale_fisier": "rsz_3.jpg",
+            "titlu":"Poza 3",
+            "alt":"imagine 3",
+            "text_descriere":"Descrierea imaginii 3",
+            "luni":[0, 5, 7, 4]
+        },
+        {
+            "cale_fisier": "rsz_4.jpg",
+            "titlu":"Poza 4",
+            "alt":"imagine 4",
+            "text_descriere":"Descrierea imaginii 4",
+            "luni":[4, 5, 6, 7]
+        },
+        {
+            "cale_fisier": "rsz_5.jpg",
+            "titlu":"Poza 5",
+            "alt":"imagine 5",
+            "text_descriere":"Descrierea imaginii 5",
+            "luni":[2, 6, 8, 4]
+        },
+        {
+            "cale_fisier": "rsz_6.jpg",
+            "titlu":"Poza 6",
+            "alt":"imagine 6",
+            "text_descriere":"Descrierea imaginii 6",
+            "luni":[4, 7, 9]
+        },
+        {
+            "cale_fisier": "rsz_7.jpg",
+            "titlu":"Poza 7",
+            "alt":"imagine 7",
+            "text_descriere":"Descrierea imaginii 7",
+            "luni":[4, 10, 11]
+        },
+        {
+            "cale_fisier": "rsz_8.jpg",
+            "titlu":"Poza 8",
+            "alt":"imagine 8",
+            "text_descriere":"Descrierea imaginii 8",
+            "luni":[3, 6, 5]
+        },
+        {
+            "cale_fisier": "rsz_9.jpg",
+            "titlu":"Poza 9",
+            "alt":"imagine 9",
+            "text_descriere":"Descrierea imaginii 9",
+            "luni":[2, 4, 6]
+        },
+        {
+            "cale_fisier": "rsz_10.jpg",
+            "titlu":"Poza 10",
+            "alt":"imagine 10",
+            "text_descriere":"Descrierea imaginii 10",
+            "luni":[1, 3, 5]
+        },
+        {
+            "cale_fisier": "rsz_11.jpg",
+            "titlu":"Poza 11",
+            "alt":"imagine 11",
+            "text_descriere":"Descrierea imaginii 11",
+            "luni":[1, 2, 8]
+        }
+    ]
+}

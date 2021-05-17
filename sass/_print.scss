@@ -1,0 +1,107 @@
+@media print {
+    * {
+        transition: none !important;
+        animation: none !important;
+        transform: none !important;
+    }
+
+    image, iframe, video, picture, .galerie-statica, #galerie2, .galerie, .sectiunea8, abbr {
+        visibility: hidden !important;
+        display: none !important;
+    }
+
+    .sectiunea1 {
+        margin-top: -25px !important;
+        h1{
+            position: absolute !important;
+            top: 25% !important;
+        }
+    }
+    a {
+        text-decoration: none !important;
+    }
+    .watermark {
+        width: 60vw;
+        height: 10vh;
+        opacity: 0.3 !important;
+        z-index: 1000 !important;
+        position: fixed !important;
+        visibility: visible !important;
+        margin: 0;
+        padding: 0;
+        left: 15% !important ;
+        top: 40% !important;
+        transform: translateX(-100%) !important;
+        transform: translateY(50%) !important;
+        p {
+            font-size: 60px !important;
+            text-align: center;
+        }
+    }
+    .container {
+        margin-top: -100px !important;
+    }
+    #beginning {
+        position: static !important;
+        z-index: 1 !important;
+        display: block !important;
+        margin-left: 20px !important;
+        .nav{
+            position: absolute;
+            background-color: rgba(0,0,0,0.0) !important;
+            display: block !important;
+            top: 200px !important;
+        }
+        .menu-nav {
+            display: block !important;
+            list-style-type: upper-roman !important;
+        }
+        page-break-before: avoid !important;
+        page-break-after: always !important;
+    }
+    .banner {
+        z-index: 2 !important;
+        color: #000 !important;
+        position: absolute !important;
+        width: 50vw !important;
+        top:10px !important;
+        left: 350px !important;
+        height:2rem;
+        display:inline-block;
+        border-bottom: 1px solid #000;
+        display: inline-block;
+        animation: none !important;
+        animation-fill-mode: none !important;
+        &:before {
+            content: "";
+            display: block;
+            position: absolute;
+            left: 0;
+            bottom: 10px;
+            width:100%;
+            height:3px;
+            background: #000;
+        }
+        p {
+            color: #000 !important;
+        }
+    }
+    @page {
+		size: A4 portrait;
+		margin-bottom:2cm;
+		margin-top:2cm;
+		counter-increment: page;
+			
+	}
+	@page:left{
+
+		margin-left:2cm;
+		margin-right:1cm;
+		border-radius: 20cm;
+	}
+	@page:right{
+
+		margin-right:2cm;
+		margin-left:1cm;
+	}
+}

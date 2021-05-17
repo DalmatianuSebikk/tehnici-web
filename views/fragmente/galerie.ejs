@@ -1,0 +1,44 @@
+<div class="spatiu-gol">
+</div>
+
+<div class="galerie-statica">
+    <h2 class="title-section">Galerie Foto</h2>
+    <div class="spatiu-gol">
+    </div>
+    <div class="grid-galerie">
+        <% if (n == 12) {%>
+            <% for (let imag of imagini) {%>
+                <figure>
+                    <picture>
+                        <source srcset="/<%-imag.mic%>" media="(max-width:500px)"/>
+                        <img src="/<%-imag.mare%>" alt="text"/>
+                    </picture>
+                    <figcaption><%-imag.descriere%></figcaption>
+                </figure>
+            <% } %>
+        <% } else { %>
+            <% for (let imag of imagini) {%>
+                <figure>
+                    <picture>
+                        <source srcset="/<%-imag.mic%>" media="(max-width:500px)"/>
+                        <img src="/<%-imag.mare%>" alt="text"/>
+                    </picture>
+                    <figcaption><%-imag.descriere%></figcaption>
+                </figure>
+                <div></div>
+            <% } %>
+        <% } %>
+    </div>
+
+    <div class="grid-galerie2">
+        <% for (let imag of imagini) {%>
+            <figure>
+                <picture>
+                    <source srcset="/<%-imag.mic%>" media="(max-width:500px)"/>
+                    <img src="/<%-imag.mare%>" alt="text"/>
+                </picture>
+                <figcaption><%-imag.descriere%></figcaption>
+            </figure>
+        <% } %>
+    </div>
+</div>

@@ -1,4 +1,7 @@
 @media screen and (min-width: 200px) and (max-width: 500px){
+    .videoclip {
+        width: 300px !important;
+    }
     .coloane {
         flex-direction: column !important;
         align-items: center !important;
@@ -20,6 +23,9 @@
         
  }
 @media screen and (max-width:768px) {
+    .videoclip {
+        width: 350px !important;
+    }
     .banner {
         display: none;
     }
