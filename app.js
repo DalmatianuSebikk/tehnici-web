@@ -3,13 +3,17 @@ const path = require('path');
 const fs = require('fs');
 const routes = require('./routes');
 const sharp = require('sharp');
+const {Client} = require('pg');
 const { S_IFREG } = require('constants');
 // var engine = require('ejs-mate');
 const app = express(); // declar obiectul
 // Setez documentul default de views ca fiind drept folderul views
 app.set('views', path.join(__dirname, 'views')); // folosesc app.set pentru asta
 
-// setez folderele pentru SASS si js
+
+
+
+
 
 // app.use(express.static(path.join(__dirname, "assets/galerie")));
 app.use(express.static(path.join(__dirname, "css")));

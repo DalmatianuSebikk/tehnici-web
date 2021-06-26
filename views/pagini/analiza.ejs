@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+    <%- include ("../fragmente/head") -%>
+    <head>
+        
+    </head>
+    <body>
+        
+        <%- include ("../fragmente/header") -%>
+
+        <div class="spatiu-gol">
+            
+        </div>
+
+        <h1 class="titlu-analiza"> Analiza numarul <%-locals.analiza.id_analize%></h1>
+        <div class="container-analiza-unic">
+                <article class="analiza">
+                    <img src="https://<%-locals.analiza.poza_analiza %>" alt="seringa" style="width: 200px;">
+                    
+                    <div class="detalii-analiza">
+                        
+                        
+                        <h2 class="nume">
+                            <b><a href="/investigatii/<%-locals.analiza.id_analize %>"> <span class="val-nume"> <%-locals.analiza.nume%> </span> </a></b>
+                        </h2>
+                        <br>
+                        <p class="descriere"><b>Descriere: </b><i><%-locals.analiza.descriere %></i> </p>
+                        <p class="pret"><b>Pret:</b> <span class="val-pret"><%-locals.analiza.pret %></span> <b>RON</b> </p>
+                        <p class="categorie"><b>Categorie de analize:</b> <b><%-locals.analiza.categorie_analize %></b> </p>
+                        <% if (locals.analiza.pacient_peste_18_ani == true) { %>
+                            <p class="anunt"><b>PACIENTUL TREBUIE SA AIBA IMPLINITI 18 ANI PENTRU A EFECTUA ANALIZA.</b></p>
+                        <% } %>
+                        <p class="data"><b>Data adaugarii: </b><%- locals.analiza.data_adaugarii %> </p>
+                        <p class="sange"><b>Necesita luare de sange:</b> <%- locals.analiza.necesita_luare_de_sange %></p>
+                        <p class="tip"><b>Locatie recoltare:</b> <%- locals.analiza.tip_analiza %> </p>
+                    </div>
+                </article>
+    
+        </div>
+        <%- include ("../fragmente/footer") -%>
+
+        <div class="banner">
+            <p>Acesta este un proiect scolar</p>
+        </div>
+        <script src="https://kit.fontawesome.com/1fce009929.js" crossorigin="anonymous"></script>
+        <script src="js/main.js"></script>
+    </body>
+</html>

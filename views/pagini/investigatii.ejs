@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html>
     <%- include ("../fragmente/head") -%>
+    <head>
+        
+    </head>
     <body>
         
         <%- include ("../fragmente/header") -%>
@@ -9,9 +12,27 @@
             
         </div>
 
-        <section class="galerie-statica">
-            
-        </section>
+        <h1 class="titlu-analiza"> Lista analize:</h1>
+        <div class="container-analiza">
+            <% for(let analiz of locals.analize) { %>
+                <article class="analiza">
+                    <img src="https://<%-analiz.poza_analiza %>" alt="seringa" style="width: 200px;">
+                    
+                    <div class="detalii-analiza">
+                        
+                        <br>
+                        <h3 class="nume">
+                            Nume:
+                            <a href="/investigatii/<%-analiz.id_analize %>"> <span class="val-nume"> <%- analiz.nume%> </span> </a>
+                        </h3>
+                        <p class="descriere"><b>Descriere: </b><i><%-analiz.descriere %></i> </p>
+                        <p class="pret"><b>Pret:</b> <span class="val-pret"><%-analiz.pret %></span> <b>RON</b> </p>
+                        <p class="categorie"><b>Categorie de analize:</b> <b><%-analiz.categorie_analize %></b> </p>
+                    </div>
+                </article>
+    
+            <% } %>
+        </div>
         <%- include ("../fragmente/footer") -%>
 
         <div class="banner">

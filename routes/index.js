@@ -4,11 +4,23 @@ const requestIp = require('request-ip');
 const fs = require('fs');
 const sharp = require('sharp');
 const path = require('path');
+const {Client} = require('pg');
 const ipMiddleware = function(req, res, next) {
   const clientIp = requestIp.getClientIp(req); 
   next();
 };
 
+const client = new Client ({
+  host: 'localhost',
+  user: 'sebi',
+  password: 'parolica1234',
+  database: 'investigatii',
+  port:5432
+});
+client.connect();
+
+
+// ------------ PARTE CU ALES POZE -------------
 function alegRandom(){
   arrayNumarPoze = [9, 12];
   var nrRandom = Math.floor((Math.random() * 10) % 2); // dintre 0 si 1
@@ -93,7 +105,31 @@ router.get(['/', '/index'], (req, res) => {
 
 router.get('/investigatii', (req, res) => {
   console.log('Request pentru pagina de investigatii. Returnez investigatii.ejs');
-  res.render('pagini/investigatii.ejs');
+  let conditie = req.query.tip ? "WHERE categorie_analize = '" + req.query.tip + "'" : "";
+  console.log('SELECT id_analize, poza_analiza, nume, descriere, categorie_analize, pret FROM analize_medicale' + conditie);
+  client.query('SELECT id_analize, poza_analiza, nume, descriere, categorie_analize, pret FROM analize_medicale' + conditie, function(err, rez){
+    console.log(err, rez);
+    client.query('SELECT UNNEST(ENUM_RANGE( NULL::tipuri_analize)) AS categ', function(err, rezCateg){
+      console.log(rezCateg);
+      res.render('pagini/investigatii.ejs', {analize: rez.rows, categorii:rezCateg.rows});
+    });
+  });
+});
+
+router.get('/investigatii/:id_analize', function(req, res){
+  console.log(req.params);
+  const rezultat = client.query('SELECT * FROM analize_medicale WHERE id_analize=' + req.params.id_analize, function(err, rez){
+    console.log(rez.rows);
+    res.render('pagini/analiza.ejs', {analiza: rez.rows[0]});
+  });
+});
+
+router.get('/investigatii/categorie/:categorieAnaliza', function(req, res){
+  console.log(req.params);
+  const rezultat = client.query("SELECT id_analize, poza_analiza, nume, descriere, categorie_analize, pret FROM analize_medicale WHERE categorie_analize = '" + req.params.categorieAnaliza + "'", function(err, rez){
+    console.log(rez.rows);
+    res.render('pagini/investigatii.ejs', {analize: rez.rows});
+  });
 });
 
 
@@ -102,4 +138,7 @@ router.get('/departamente', (req, res) => {
   res.render('pagini/departamente.ejs', {imagini:alegImagini()});
 })
 
+
 module.exports = router;
+
+
