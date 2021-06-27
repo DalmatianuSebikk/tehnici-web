@@ -1,0 +1,23 @@
+{
+  "development": {
+    "username": "sebi",
+    "password": "parolica1234",
+    "database": "investigatii",
+    "host": "127.0.0.1",
+    "dialect": "postgres"
+  },
+  "test": {
+    "username": "sebi",
+    "password": "parolica1234",
+    "database": "investigatii",
+    "host": "127.0.0.1",
+    "dialect": "postgres"
+  },
+  "production": {
+    "username": "sebi",
+    "password": "parolica1234",
+    "database": "investigatii",
+    "host": "127.0.0.1",
+    "dialect": "postgres"
+  }
+}
