@@ -39,4 +39,4 @@ app.use('/*',function(req, res) {
 app.set('view engine', 'ejs');
 // app.engine('ejs', engine);
 
-app.listen(8080, () => {console.log("Serverul a pornit...")});
+app.listen(process.env.PORT, () => {console.log("Serverul a pornit...")});
