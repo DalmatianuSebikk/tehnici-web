@@ -16,9 +16,10 @@ app.set('views', path.join(__dirname, 'views')); // folosesc app.set pentru asta
 
 
 // app.use(express.static(path.join(__dirname, "assets/galerie")));
+app.use(express.static(path.join(__dirname, 'js')));
 app.use(express.static(path.join(__dirname, "css")));
 app.set(express.static(path.join(__dirname, 'node_modules')));
-app.set(express.static(path.join(__dirname, 'js')));
+
 
 // fac rutele, ip ul si o functie de aruncat 404 not found:
 

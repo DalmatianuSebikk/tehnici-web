@@ -1,9 +1,6 @@
 <!DOCTYPE html>
 <html>
     <%- include ("../fragmente/head") -%>
-    <head>
-        
-    </head>
     <body>
         
         <%- include ("../fragmente/header") -%>
@@ -11,34 +8,69 @@
         <div class="spatiu-gol">
             
         </div>
+        <!-- MAINUL PAGINII DE PRODUSE -->
+        <main>
 
-        <h1 class="titlu-analiza"> Lista analize:</h1>
-        <div class="container-analiza">
-            <% for(let analiz of locals.analize) { %>
-                <article class="analiza">
-                    <img src="https://<%-analiz.poza_analiza %>" alt="seringa" style="width: 200px;">
-                    
-                    <div class="detalii-analiza">
-                        
-                        <br>
-                        <h3 class="nume">
-                            Nume:
-                            <a href="/investigatii/<%-analiz.id_analize %>"> <span class="val-nume"> <%- analiz.nume%> </span> </a>
-                        </h3>
-                        <p class="descriere"><b>Descriere: </b><i><%-analiz.descriere %></i> </p>
-                        <p class="pret"><b>Pret:</b> <span class="val-pret"><%-analiz.pret %></span> <b>RON</b> </p>
-                        <p class="categorie"><b>Categorie de analize:</b> <b><%-analiz.categorie_analize %></b> </p>
-                    </div>
-                </article>
-    
-            <% } %>
+            <!-- TITLU SECTIUNE WEBSITE -->
+            <h1 class="titlu-analiza"> Lista analize:</h1>
+
+            <!-- LISTA DE FILTRE -->
+        <div class="centru">
+            <div class="container-label">
+                <label for="">Pret minim: <input type="range" id="inp-pret" value="0" min="0"  max="250"></label>
+                <br>
+                <label for="">
+                    Select simplu:
+                    <select id="inp-categorie">
+                        <option value="toate">Toate</option>
+                        <% for (let categor of locals.categorii ) { %>
+                            <option value="<%- categor.categ %>"><%- categor.categ %></option>
+                        <% } %>
+                    </select>
+                </label>
+                <br>
+                <button id="filtrare">Filtreaza</button>
+                <br>
+                <button id="sortareCrescNume">Sorteaza crescator dupa nume</button>
+                <br>
+                <button id="sortareDescNume">Sorteaza descrescator dupa nume </button>
+                <br>
+                <button id="reset">Reseteaza</button>
+                <br>
+                <p id="p-suma">Apasați Alt+"c" pentru suma preturilor produselor afișate. </p>
+               </div>
         </div>
+          
+
+            <!-- CONTAINER ANALIZA -->
+            <div class="container-analiza">
+                <% for(let analiz of locals.analize) { %>
+                    <article class="analiza">
+                        <img src="https://<%-analiz.poza_analiza %>" alt="seringa" style="width: 200px;">
+                        
+                        <div class="detalii-analiza">
+                            
+                            <br>
+                            <h3 class="nume">
+                                Nume:
+                                <a href="/investigatii/<%-analiz.id_analize %>"> <span class="val-nume"> <%- analiz.nume%> </span> </a>
+                            </h3>
+                            <p class="descriere"><b>Descriere: </b><i><%-analiz.descriere %></i> </p>
+                            <p class="pret"><b>Pret:</b> <span class="val-pret"><%-analiz.pret %></span> <b>RON</b> </p>
+                            <p class="categorie"><b>Categorie de analize:</b> <span class="val-categorie"><%-analiz.categorie_analize %></span> </p>
+                        </div>
+                    </article>
+        
+                <% } %>
+            </div>
+        </main>
+       
         <%- include ("../fragmente/footer") -%>
 
         <div class="banner">
             <p>Acesta este un proiect scolar</p>
         </div>
         <script src="https://kit.fontawesome.com/1fce009929.js" crossorigin="anonymous"></script>
-        <script src="js/main.js"></script>
+        <script src="menu.js"></script>
     </body>
 </html>

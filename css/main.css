@@ -1035,6 +1035,19 @@
   color: red;
 }
 
+.centru {
+  margin-top: 3em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
 body {
   font-family: 'Open Sans', sans-serif;
   --albastru1: #3080bd;
