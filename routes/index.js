@@ -11,10 +11,10 @@ const ipMiddleware = function(req, res, next) {
 };
 
 const client = new Client ({
-  host: 'postgres://zqyxlbgvfzaxsm:aedb6ad325ed67862de66ce6b00bc3137deb665c3a3e23be1f53517fbde8ae4d@ec2-54-163-97-228.compute-1.amazonaws.com:5432/dec5hmv2ruafet',
-  user: 'sebi',
-  password: 'parolica1234',
-  database: 'investigatii',
+  host: 'ec2-54-163-97-228.compute-1.amazonaws.com',
+  user: 'zqyxlbgvfzaxsm',
+  password: 'aedb6ad325ed67862de66ce6b00bc3137deb665c3a3e23be1f53517fbde8ae4d',
+  database: 'dec5hmv2ruafet',
   port:5432
 });
 client.connect();

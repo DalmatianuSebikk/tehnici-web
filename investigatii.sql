@@ -124,6 +124,13 @@ ALTER TABLE ONLY public.analize_medicale
 
 
 --
+-- Name: DEFAULT PRIVILEGES FOR TABLES; Type: DEFAULT ACL; Schema: -; Owner: postgres
+--
+
+ALTER DEFAULT PRIVILEGES FOR ROLE postgres GRANT ALL ON TABLES  TO sebi;
+
+
+--
 -- PostgreSQL database dump complete
 --
 
