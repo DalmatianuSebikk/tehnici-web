@@ -4,21 +4,21 @@ const requestIp = require('request-ip');
 const fs = require('fs');
 const sharp = require('sharp');
 const path = require('path');
-const {Client} = require('pg');
+const {Pool} = require('pg');
 const ipMiddleware = function(req, res, next) {
   const clientIp = requestIp.getClientIp(req); 
   next();
 };
 
 const client = new Pool ({
-  // host: 'ec2-54-163-97-228.compute-1.amazonaws.com',
-  // user: 'zqyxlbgvfzaxsm',
-  // password: 'aedb6ad325ed67862de66ce6b00bc3137deb665c3a3e23be1f53517fbde8ae4d',
-  // database: 'dec5hmv2ruafet',
-  // port:5432,
-  connectionString: process.env.DATABASE_URL,
+  host: 'ec2-54-163-97-228.compute-1.amazonaws.com',
+  user: 'zqyxlbgvfzaxsm',
+  password: 'aedb6ad325ed67862de66ce6b00bc3137deb665c3a3e23be1f53517fbde8ae4d',
+  database: 'dec5hmv2ruafet',
+  port:5432,
+  // connectionString: process.env.DATABASE_URL,
   ssl: {
-    rejectUnauthorized: true
+    rejectUnauthorized:false
   }
 });
 client.connect();
