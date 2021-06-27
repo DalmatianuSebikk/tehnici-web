@@ -10,11 +10,6 @@ const app = express(); // declar obiectul
 // Setez documentul default de views ca fiind drept folderul views
 app.set('views', path.join(__dirname, 'views')); // folosesc app.set pentru asta
 
-
-
-
-
-
 // app.use(express.static(path.join(__dirname, "assets/galerie")));
 app.use(express.static(path.join(__dirname, 'js')));
 app.use(express.static(path.join(__dirname, "css")));

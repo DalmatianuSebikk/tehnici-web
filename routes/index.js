@@ -11,11 +11,15 @@ const ipMiddleware = function(req, res, next) {
 };
 
 const client = new Client ({
-  host: 'ec2-54-163-97-228.compute-1.amazonaws.com',
-  user: 'zqyxlbgvfzaxsm',
-  password: 'aedb6ad325ed67862de66ce6b00bc3137deb665c3a3e23be1f53517fbde8ae4d',
-  database: 'dec5hmv2ruafet',
-  port:5432
+  // host: 'ec2-54-163-97-228.compute-1.amazonaws.com',
+  // user: 'zqyxlbgvfzaxsm',
+  // password: 'aedb6ad325ed67862de66ce6b00bc3137deb665c3a3e23be1f53517fbde8ae4d',
+  // database: 'dec5hmv2ruafet',
+  // port:5432,
+  connectionString: process.env.DATABASE_URL,
+  ssl: {
+    rejectUnauthorized: true
+  }
 });
 client.connect();
 
